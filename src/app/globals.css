@@ -1,0 +1,276 @@
+@import "tailwindcss";
+/* Root variables for light mode */
+
+/* Root variables for light theme */
+:root {
+  /* Base Colors */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  
+  /* Primary Colors */
+  --primary: #1E40AF; /* Deep Blue */
+  --primary-foreground: #ffffff;
+  --primary-subtle: #EFF6FF;
+  
+  /* Secondary Colors */
+  --secondary: #F97316; /* Orange */
+  --secondary-foreground: #ffffff;
+  --secondary-subtle: #FFF7ED;
+  
+  /* Accent Colors */
+  --accent: #10B981; /* Green */
+  --accent-foreground: #ffffff;
+  
+  /* Neutral Colors */
+  --neutral-50: #F9FAFB;
+  --neutral-100: #F3F4F6;
+  --neutral-200: #E5E7EB;
+  --neutral-300: #D1D5DB;
+  --neutral-400: #9CA3AF;
+  --neutral-500: #6B7280;
+  --neutral-600: #4B5563;
+  --neutral-700: #374151;
+  --neutral-800: #1F2937;
+  --neutral-900: #111827;
+
+  /* Gradient Colors */
+  --gradient-from-primary: #3B82F6;
+  --gradient-to-primary: #2563EB;
+  --gradient-from-secondary: #F97316; 
+  --gradient-to-secondary: #EA580C;
+  
+  /* Background Gradients */
+  --bg-gradient-light: radial-gradient(circle at center, rgba(59, 130, 246, 0.05), rgba(255, 255, 255, 0) 70%);
+  
+  /* Additional Theme Variables */
+  --shadow-color: rgba(0,0,0,0.1);
+  --border-color: #E5E7EB;
+}
+
+/* Dark theme variables */
+.dark {
+  /* Base Colors */
+  --background: #0F172A; /* Dark Navy */
+  --foreground: #F8FAFC;
+  
+  /* Primary Colors */
+  --primary: #3B82F6; /* Bright Blue */
+  --primary-foreground: #ffffff;
+  --primary-subtle: #172554;
+  
+  /* Secondary Colors */
+  --secondary: #EA580C; /* Deep Orange */
+  --secondary-foreground: #ffffff;
+  --secondary-subtle: #7C2D12;
+  
+  /* Accent Colors */
+  --accent: #14B8A6; /* Teal */
+  --accent-foreground: #ffffff;
+  
+  /* Neutral Colors */
+  --neutral-50: #111827;
+  --neutral-100: #1F2937;
+  --neutral-200: #374151;
+  --neutral-300: #4B5563;
+  --neutral-400: #6B7280;
+  --neutral-500: #9CA3AF;
+  --neutral-600: #D1D5DB;
+  --neutral-700: #E5E7EB;
+  --neutral-800: #F3F4F6;
+  --neutral-900: #F9FAFB;
+
+  /* Gradient Colors */
+  --gradient-from-primary: #3B82F6;
+  --gradient-to-primary: #1D4ED8;
+  --gradient-from-secondary: #EA580C;
+  --gradient-to-secondary: #C2410C;
+  
+  /* Background Gradients */
+  --bg-gradient-dark: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), rgba(15, 23, 42, 0) 70%);
+
+  /* Additional Theme Variables */
+  --shadow-color: rgba(0,0,0,0.25);
+  --border-color: #1F2937;
+}
+
+/* Base body styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Global utility classes */
+.theme-transition {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(
+    to right, 
+    var(--gradient-from-primary), 
+    var(--gradient-to-primary)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-secondary {
+  background: linear-gradient(
+    to right, 
+    var(--gradient-from-secondary), 
+    var(--gradient-to-secondary)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Subtle shadow utility */
+.theme-shadow {
+  box-shadow: 
+    0 10px 15px -3px var(--shadow-color),
+    0 4px 6px -2px var(--shadow-color);
+}
+
+/* Subtle gradient backgrounds */
+.bg-gradient-subtle {
+  background: var(--bg-gradient-light);
+}
+
+.dark .bg-gradient-subtle {
+  background: var(--bg-gradient-dark);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px var(--shadow-color);
+}
+
+/* Button hover effects */
+.btn-hover-gradient {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-hover-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--gradient-from-primary), var(--gradient-to-primary));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-hover-gradient:hover::before {
+  opacity: 1;
+}
+
+/* Bottom Navigation Bar (Mobile) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background);
+  box-shadow: 0 -1px 10px var(--shadow-color);
+  z-index: 50;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0;
+  font-size: 0.75rem;
+  color: var(--neutral-500);
+  transition: color 0.3s ease;
+}
+
+.bottom-nav-item.active {
+  color: var(--primary);
+}
+
+.bottom-nav-icon {
+  margin-bottom: 0.25rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Staggered animations for children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* Accessibility and print styles */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
