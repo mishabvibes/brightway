@@ -20,30 +20,32 @@ interface ThemeContextType {
 
 // Create theme context with a default value
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'system',
+  theme: 'dark', // Changed default from 'system' to 'dark'
   toggleTheme: () => {},
-  isDarkMode: false
+  isDarkMode: true  // Changed default from false to true
 });
 
 // Theme provider component
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('system');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // Changed initial state from 'system' to 'dark'
+  const [theme, setTheme] = useState<Theme>('dark');
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to true
   const [isMounted, setIsMounted] = useState(false);
 
   // Initialize theme on client-side
   useEffect(() => {
-    // Check for saved theme or system preference
+    // Check for saved theme or use dark as default
     const savedTheme = localStorage.getItem('theme') as Theme;
     const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches 
       ? 'dark' 
       : 'light';
     
-    // Set initial theme
-    setTheme(savedTheme || 'system');
+    // If no saved theme, default to dark instead of system
+    setTheme(savedTheme || 'dark');
     setIsDarkMode(
       savedTheme === 'dark' || 
-      (savedTheme !== 'light' && systemPreference === 'dark')
+      (savedTheme !== 'light' && systemPreference === 'dark') ||
+      !savedTheme // If no saved theme, default to dark
     );
     setIsMounted(true);
   }, []);
@@ -107,6 +109,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // Update meta theme-color for browser UI
   const updateMetaThemeColor = (mode: 'light' | 'dark') => {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    // Updated colors to match our enhanced palette
     const color = mode === 'dark' ? '#0F172A' : '#ffffff';
     
     if (metaThemeColor) {
@@ -119,12 +122,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // Theme toggle logic
+  // Modified theme toggle logic to prioritize dark mode
   const toggleTheme = () => {
     setTheme(current => 
-      current === 'light' ? 'dark' 
-      : current === 'dark' ? 'system'
-      : 'light'
+      current === 'dark' ? 'light' 
+      : current === 'light' ? 'system'
+      : 'dark'
     );
   };
 

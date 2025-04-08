@@ -58,7 +58,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 overflow-hidden">
+    <main className="bg-white text-neutral-900 overflow-hidden">
       <HeroSection />
       <ServicesSection />
       <AboutSection />

@@ -1,7 +1,6 @@
+/* Modified globals.css */
 @import "tailwindcss";
-/* Root variables for light mode */
 
-/* Root variables for light theme */
 :root {
   /* Base Colors */
   --background: #ffffff;
@@ -45,52 +44,6 @@
   /* Additional Theme Variables */
   --shadow-color: rgba(0,0,0,0.1);
   --border-color: #E5E7EB;
-}
-
-/* Dark theme variables */
-.dark {
-  /* Base Colors */
-  --background: #0F172A; /* Dark Navy */
-  --foreground: #F8FAFC;
-  
-  /* Primary Colors */
-  --primary: #3B82F6; /* Bright Blue */
-  --primary-foreground: #ffffff;
-  --primary-subtle: #172554;
-  
-  /* Secondary Colors */
-  --secondary: #EA580C; /* Deep Orange */
-  --secondary-foreground: #ffffff;
-  --secondary-subtle: #7C2D12;
-  
-  /* Accent Colors */
-  --accent: #14B8A6; /* Teal */
-  --accent-foreground: #ffffff;
-  
-  /* Neutral Colors */
-  --neutral-50: #111827;
-  --neutral-100: #1F2937;
-  --neutral-200: #374151;
-  --neutral-300: #4B5563;
-  --neutral-400: #6B7280;
-  --neutral-500: #9CA3AF;
-  --neutral-600: #D1D5DB;
-  --neutral-700: #E5E7EB;
-  --neutral-800: #F3F4F6;
-  --neutral-900: #F9FAFB;
-
-  /* Gradient Colors */
-  --gradient-from-primary: #3B82F6;
-  --gradient-to-primary: #1D4ED8;
-  --gradient-from-secondary: #EA580C;
-  --gradient-to-secondary: #C2410C;
-  
-  /* Background Gradients */
-  --bg-gradient-dark: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), rgba(15, 23, 42, 0) 70%);
-
-  /* Additional Theme Variables */
-  --shadow-color: rgba(0,0,0,0.25);
-  --border-color: #1F2937;
 }
 
 /* Base body styles */
@@ -164,10 +117,6 @@ body {
 /* Subtle gradient backgrounds */
 .bg-gradient-subtle {
   background: var(--bg-gradient-light);
-}
-
-.dark .bg-gradient-subtle {
-  background: var(--bg-gradient-dark);
 }
 
 /* Card hover effects */

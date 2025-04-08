@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Home, Wrench, Info, Phone, Menu, X, ChevronRight } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 import Footer from './Footer';
 import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
@@ -79,7 +78,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+    <div className="min-h-screen bg-white text-neutral-900">
       {/* Desktop Navigation */}
       <header 
         className={`
@@ -91,7 +90,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           transition-all 
           duration-300 
           ${scrolled 
-            ? 'bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md shadow-md' 
+            ? 'bg-white/90 backdrop-blur-md shadow-md' 
             : 'bg-transparent'
           }
           md:block
@@ -106,9 +105,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               text-xl
               font-bold 
               text-neutral-900 
-              dark:text-neutral-100 
               hover:text-primary
-              dark:hover:text-primary
               transition-colors
               flex items-center
             "
@@ -143,8 +140,8 @@ export default function Layout({ children }: { children: ReactNode }) {
                   relative
                   py-2
                   ${activeSection === item.section
-                    ? 'text-primary dark:text-primary font-medium'
-                    : 'text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary'
+                    ? 'text-primary font-medium'
+                    : 'text-neutral-600 hover:text-primary'
                   }
                   ${activeSection === item.section ? 'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-secondary' : ''}
                 `}
@@ -153,10 +150,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               </Link>
             ))}
             
-            {/* Theme Toggle and CTA */}
-            <div className="flex items-center space-x-4">
-              <ThemeToggle />
-              
+            {/* CTA Button */}
+            <div className="flex items-center">
               <Link 
                 href="/#contact" 
                 className="
@@ -186,20 +181,16 @@ export default function Layout({ children }: { children: ReactNode }) {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center space-x-4">
-            <ThemeToggle />
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="
                 text-neutral-900 
-                dark:text-neutral-100 
                 hover:text-primary
-                dark:hover:text-primary
                 transition-colors
                 p-2
                 rounded-lg
                 hover:bg-neutral-100
-                dark:hover:bg-neutral-800
               "
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
@@ -216,7 +207,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             fixed 
             inset-0 
             bg-white 
-            dark:bg-neutral-950 
             z-40 
             pt-20 
             px-4 
@@ -235,8 +225,8 @@ export default function Layout({ children }: { children: ReactNode }) {
                   font-medium
                   transition-colors 
                   ${activeSection === item.section
-                    ? 'text-primary dark:text-primary'
-                    : 'text-neutral-900 dark:text-neutral-100 hover:text-primary dark:hover:text-primary'
+                    ? 'text-primary'
+                    : 'text-neutral-900 hover:text-primary'
                   }
                   flex
                   items-center
@@ -247,7 +237,6 @@ export default function Layout({ children }: { children: ReactNode }) {
                   w-10 h-10
                   rounded-full
                   bg-neutral-100
-                  dark:bg-neutral-800
                   flex items-center justify-center
                   mr-4
                   ${activeSection === item.section ? 'text-primary' : 'text-neutral-500'}
@@ -298,7 +287,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       {/* Bottom Navigation Bar (Mobile Only) */}
       <div className="bottom-nav md:hidden">
-        <div className="grid grid-cols-4 bg-white/95 dark:bg-neutral-900/95 border-t border-neutral-200 dark:border-neutral-800">
+        <div className="grid grid-cols-4 bg-white/95 border-t border-neutral-200">
           {navItems.map((item) => (
             <Link
               key={item.name}

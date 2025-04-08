@@ -98,11 +98,11 @@ export default function EnhancedFooter() {
   ];
 
   return (
-    <footer className="bg-white dark:bg-neutral-950 pt-16 relative overflow-hidden">
+    <footer className="bg-white pt-16 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full opacity-40 dark:opacity-10">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute -top-1/4 -right-1/4 w-full h-full text-blue-100 dark:text-blue-900">
+        <div className="absolute top-0 right-0 w-full h-full opacity-40">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute -top-1/4 -right-1/4 w-full h-full text-blue-100">
             <path fill="currentColor" d="M39.7,-66.2C51.9,-60.2,62.8,-50.5,71.1,-38.6C79.4,-26.7,85.2,-12.3,84.4,1.4C83.6,15.2,76.2,28.7,67,40.1C57.8,51.5,46.8,60.9,33.7,66.4C20.7,71.8,5.7,73.3,-8.6,71.7C-22.9,70.1,-36.5,65.5,-47.8,57.2C-59.1,48.9,-68.1,37,-69.9,24.1C-71.8,11.2,-66.5,-2.7,-63.1,-17.4C-59.6,-32.1,-58,-47.6,-49.5,-56.1C-41,-64.5,-25.5,-65.9,-11.3,-67.6C2.9,-69.3,27.5,-72.2,39.7,-66.2Z" transform="translate(100 100)" />
           </svg>
         </div>
@@ -122,7 +122,7 @@ export default function EnhancedFooter() {
               <span className="text-xl font-bold">BrightWay</span>
             </div>
             
-            <p className="text-neutral-600 dark:text-neutral-400 mb-6 max-w-xs">
+            <p className="text-neutral-600 mb-6 max-w-xs">
               Innovative electrical and plumbing solutions powered by cutting-edge technology and expert craftsmanship since 2005.
             </p>
             
@@ -133,7 +133,7 @@ export default function EnhancedFooter() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-neutral-100 hover:bg-blue-100 text-neutral-600 hover:text-blue-600 rounded-lg flex items-center justify-center transition-colors"
                 >
                   <social.icon size={18} />
                 </a>
@@ -150,7 +150,7 @@ export default function EnhancedFooter() {
                   <li key={idx}>
                     <a 
                       href={link.href} 
-                      className="text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center group"
+                      className="text-neutral-600 hover:text-blue-600 transition-colors flex items-center group"
                     >
                       <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all" />
                       <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
@@ -164,12 +164,12 @@ export default function EnhancedFooter() {
           {/* Newsletter */}
           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
+            <p className="text-neutral-600 text-sm mb-4">
               Stay updated with our latest services and innovations.
             </p>
             
             {isSubscribed ? (
-              <div className="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-3 rounded-lg text-sm">
+              <div className="bg-green-100 text-green-600 p-3 rounded-lg text-sm">
                 Thanks for subscribing! We'll be in touch soon.
               </div>
             ) : (
@@ -180,7 +180,7 @@ export default function EnhancedFooter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg py-3 px-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="w-full bg-neutral-100 border border-neutral-200 rounded-lg py-3 px-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                 />
                 <button
                   type="submit"
@@ -199,19 +199,19 @@ export default function EnhancedFooter() {
         </div>
         
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-200 dark:border-neutral-800 py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-neutral-500 dark:text-neutral-500 text-sm">
+        <div className="border-t border-neutral-200 py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-neutral-500 text-sm">
             &copy; {currentYear} BrightWay Electrical & Plumbing Solutions. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-6">
-            <a href="#" className="text-neutral-500 dark:text-neutral-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+            <a href="#" className="text-neutral-500 hover:text-blue-600 text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-neutral-500 dark:text-neutral-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+            <a href="#" className="text-neutral-500 hover:text-blue-600 text-sm transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-neutral-500 dark:text-neutral-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors">
+            <a href="#" className="text-neutral-500 hover:text-blue-600 text-sm transition-colors">
               Sitemap
             </a>
           </div>

@@ -35,7 +35,7 @@ export default function EnhancedServicesSection() {
   // Services data
   const services = [
     {
-      icon: <Zap size={24} className="text-blue-600 dark:text-blue-400" />,
+      icon: <Zap size={24} className="text-blue-600" />,
       title: 'Smart Electrical Solutions',
       description: 'Intelligent electrical systems with IoT integration and energy efficiency features.',
       features: [
@@ -45,11 +45,11 @@ export default function EnhancedServicesSection() {
         'Renewable energy compatibility'
       ],
       bgGradient: 'from-blue-500/20 to-indigo-500/20',
-      iconBg: 'bg-blue-100 dark:bg-blue-900/30',
-      accentColor: 'bg-blue-600 dark:bg-blue-500'
+      iconBg: 'bg-blue-100',
+      accentColor: 'bg-blue-600'
     },
     {
-      icon: <Droplet size={24} className="text-cyan-600 dark:text-cyan-400" />,
+      icon: <Droplet size={24} className="text-cyan-600" />,
       title: 'Precision Plumbing Systems',
       description: 'Advanced plumbing technologies with leak detection and water conservation features.',
       features: [
@@ -59,11 +59,11 @@ export default function EnhancedServicesSection() {
         'High-efficiency water heating'
       ],
       bgGradient: 'from-cyan-500/20 to-blue-500/20',
-      iconBg: 'bg-cyan-100 dark:bg-cyan-900/30',
-      accentColor: 'bg-cyan-600 dark:bg-cyan-500'
+      iconBg: 'bg-cyan-100',
+      accentColor: 'bg-cyan-600'
     },
     {
-      icon: <Clock size={24} className="text-orange-600 dark:text-orange-400" />,
+      icon: <Clock size={24} className="text-orange-600" />,
       title: '24/7 Emergency Services',
       description: 'Round-the-clock support for urgent electrical and plumbing needs with rapid response.',
       features: [
@@ -73,11 +73,11 @@ export default function EnhancedServicesSection() {
         'Transparent pricing with no overtime fees'
       ],
       bgGradient: 'from-orange-500/20 to-red-500/20',
-      iconBg: 'bg-orange-100 dark:bg-orange-900/30',
-      accentColor: 'bg-orange-600 dark:bg-orange-500'
+      iconBg: 'bg-orange-100',
+      accentColor: 'bg-orange-600'
     },
     {
-      icon: <Wrench size={24} className="text-emerald-600 dark:text-emerald-400" />,
+      icon: <Wrench size={24} className="text-emerald-600" />,
       title: 'Preventive Maintenance',
       description: 'Proactive maintenance plans to prevent costly issues and extend system life.',
       features: [
@@ -87,11 +87,11 @@ export default function EnhancedServicesSection() {
         'Extended warranty on maintained systems'
       ],
       bgGradient: 'from-emerald-500/20 to-green-500/20',
-      iconBg: 'bg-emerald-100 dark:bg-emerald-900/30',
-      accentColor: 'bg-emerald-600 dark:bg-emerald-500'
+      iconBg: 'bg-emerald-100',
+      accentColor: 'bg-emerald-600'
     },
     {
-      icon: <Shield size={24} className="text-purple-600 dark:text-purple-400" />,
+      icon: <Shield size={24} className="text-purple-600" />,
       title: 'Safety Audits & Inspections',
       description: 'Comprehensive safety assessments to ensure your home systems meet all standards.',
       features: [
@@ -101,11 +101,11 @@ export default function EnhancedServicesSection() {
         'Detailed safety improvement plans'
       ],
       bgGradient: 'from-purple-500/20 to-indigo-500/20',
-      iconBg: 'bg-purple-100 dark:bg-purple-900/30',
-      accentColor: 'bg-purple-600 dark:bg-purple-500'
+      iconBg: 'bg-purple-100',
+      accentColor: 'bg-purple-600'
     },
     {
-      icon: <Cpu size={24} className="text-rose-600 dark:text-rose-400" />,
+      icon: <Cpu size={24} className="text-rose-600" />,
       title: 'Smart Home Integration',
       description: 'Seamlessly integrate your electrical and plumbing systems into your smart home.',
       features: [
@@ -115,20 +115,20 @@ export default function EnhancedServicesSection() {
         'Custom automation scenarios'
       ],
       bgGradient: 'from-rose-500/20 to-pink-500/20',
-      iconBg: 'bg-rose-100 dark:bg-rose-900/30',
-      accentColor: 'bg-rose-600 dark:bg-rose-500'
+      iconBg: 'bg-rose-100',
+      accentColor: 'bg-rose-600'
     }
   ];
 
   return (
     <section 
       id="services-section"
-      className="py-24 bg-neutral-50 dark:bg-neutral-900 overflow-hidden relative"
+      className="py-24 bg-neutral-50 overflow-hidden relative"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 -left-20 w-60 h-60 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 -left-20 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -139,18 +139,18 @@ export default function EnhancedServicesSection() {
           }`}
         >
           <div className="inline-block mb-4">
-            <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium px-4 py-2 rounded-full">
+            <span className="bg-blue-100 text-blue-600 text-sm font-medium px-4 py-2 rounded-full">
               Our Expertise
             </span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-white dark:to-neutral-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
               Innovative Services for Modern Homes
             </span>
           </h2>
           
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
+          <p className="text-lg text-neutral-600">
             We combine industry-leading expertise with cutting-edge technology to deliver solutions that transform how your home systems function.
           </p>
         </div>
@@ -164,7 +164,6 @@ export default function EnhancedServicesSection() {
           <div className={`
             relative rounded-2xl overflow-hidden shadow-xl 
             bg-gradient-to-br ${services[activeCard].bgGradient}
-            dark:bg-gradient-to-br dark:from-neutral-800 dark:to-neutral-900
           `}>
             <div className="absolute top-0 right-0 w-full h-full overflow-hidden">
               <svg className="absolute right-0 top-0 h-full w-1/2 transform translate-x-1/3 text-white text-opacity-5" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -185,7 +184,7 @@ export default function EnhancedServicesSection() {
                   {services[activeCard].title}
                 </h3>
                 
-                <p className="text-neutral-700 dark:text-neutral-300 mb-6">
+                <p className="text-neutral-700 mb-6">
                   {services[activeCard].description}
                 </p>
                 
@@ -197,7 +196,7 @@ export default function EnhancedServicesSection() {
                       `}>
                         <Check size={12} />
                       </div>
-                      <span className="text-neutral-700 dark:text-neutral-300">{feature}</span>
+                      <span className="text-neutral-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -207,7 +206,7 @@ export default function EnhancedServicesSection() {
                     href="#contact" 
                     className={`
                       inline-flex items-center text-sm font-medium px-5 py-3 rounded-lg
-                      bg-white dark:bg-neutral-800 shadow-md hover:shadow-lg transition-all
+                      bg-white shadow-md hover:shadow-lg transition-all
                       group
                     `}
                   >
@@ -218,7 +217,7 @@ export default function EnhancedServicesSection() {
               </div>
               
               <div className="hidden lg:flex items-center justify-center">
-                <div className="w-full max-w-md h-80 bg-white/20 dark:bg-black/20 backdrop-blur-sm rounded-xl shadow-inner overflow-hidden relative">
+                <div className="w-full max-w-md h-80 bg-white/20 backdrop-blur-sm rounded-xl shadow-inner overflow-hidden relative">
                   {/* Graphic elements representing the service */}
                   <div className="absolute inset-0 opacity-20">
                     <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 rounded-full border-2 border-current animate-pulse"></div>
@@ -234,7 +233,7 @@ export default function EnhancedServicesSection() {
                   
                   {/* Central icon */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-white/80 dark:bg-black/30 backdrop-blur flex items-center justify-center">
+                    <div className="w-24 h-24 rounded-full bg-white/80 backdrop-blur flex items-center justify-center">
                       <div className="transform scale-150">
                         {services[activeCard].icon}
                       </div>
@@ -254,8 +253,8 @@ export default function EnhancedServicesSection() {
                 className={`
                   w-3 h-3 rounded-full transition-all duration-300
                   ${activeCard === idx 
-                    ? 'bg-blue-600 dark:bg-blue-500 w-8'
-                    : 'bg-neutral-300 dark:bg-neutral-600 hover:bg-blue-400 dark:hover:bg-blue-700'
+                    ? 'bg-blue-600 w-8'
+                    : 'bg-neutral-300 hover:bg-blue-400'
                   }
                 `}
                 aria-label={`View service ${idx + 1}`}
@@ -270,9 +269,9 @@ export default function EnhancedServicesSection() {
             <div 
               key={idx}
               className={`
-                group bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg hover:shadow-xl
-                border border-neutral-200 dark:border-neutral-700
-                hover:border-neutral-300 dark:hover:border-neutral-600
+                group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl
+                border border-neutral-200
+                hover:border-neutral-300
                 transition-all duration-300 hover:-translate-y-1
                 ${idx % 3 === 0 ? 'lg:transform lg:translate-y-8' : ''}
                 ${idx % 3 === 1 ? '' : ''}
@@ -294,17 +293,17 @@ export default function EnhancedServicesSection() {
                 {service.icon}
               </div>
               
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
                 {service.title}
               </h3>
               
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+              <p className="text-neutral-600 mb-6">
                 {service.description}
               </p>
               
               <a 
                 href="#contact" 
-                className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm group-hover:translate-x-1 transition-transform"
+                className="inline-flex items-center text-blue-600 font-medium text-sm group-hover:translate-x-1 transition-transform"
               >
                 Learn more <ChevronRight size={16} className="ml-1" />
               </a>

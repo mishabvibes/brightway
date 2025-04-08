@@ -45,7 +45,7 @@ export default function EnhancedTestimonialsSection() {
     },
     {
       id: 2,
-      content: "We hired BrightWay to upgrade our office's electrical setup. Their work was smooth and didn’t interrupt our team at all. The smart monitoring system they installed helps us avoid any problems before they start.",
+      content: "We hired BrightWay to upgrade our office's electrical setup. Their work was smooth and didn't interrupt our team at all. The smart monitoring system they installed helps us avoid any problems before they start.",
       author: "Swalih Zayn",
       position: "Real Estate",
       location: "Palakkad, Kerala",
@@ -101,12 +101,12 @@ export default function EnhancedTestimonialsSection() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-white dark:bg-neutral-950 overflow-hidden relative"
+      className="py-24 bg-white overflow-hidden relative"
     >
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 left-1/4 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/3 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 right-1/4 w-96 h-96 bg-indigo-500/5 dark:bg-indigo-500/3 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -116,18 +116,18 @@ export default function EnhancedTestimonialsSection() {
             }`}
         >
           <div className="inline-block mb-4">
-            <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium px-4 py-2 rounded-full">
+            <span className="bg-blue-100 text-blue-600 text-sm font-medium px-4 py-2 rounded-full">
               Testimonials
             </span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-white dark:to-neutral-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
               What Our Clients Say
             </span>
           </h2>
 
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
+          <p className="text-lg text-neutral-600">
             Discover how our innovative solutions have transformed homes and businesses across the region.
           </p>
         </div>
@@ -145,17 +145,17 @@ export default function EnhancedTestimonialsSection() {
           >
             <div className={`
               relative z-10 grid grid-cols-1 lg:grid-cols-7 overflow-hidden
-              ${testimonials[currentIndex].color} dark:bg-neutral-900
+              ${testimonials[currentIndex].color}
             `}>
               {/* Client Image - 3 columns */}
               <div className="lg:col-span-3 p-8 lg:p-0 flex items-center justify-center">
                 <div className="relative h-full w-full flex items-center justify-center p-8">
                   {/* Background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 dark:from-black/20 dark:to-black/5"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5"></div>
 
                   {/* Client image */}
                   <div className="relative z-10">
-                    <div className="w-32 h-32 lg:w-48 lg:h-48 rounded-full border-4 border-white dark:border-neutral-800 shadow-xl overflow-hidden">
+                    <div className="w-32 h-32 lg:w-48 lg:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden">
                       <img
                         src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].author}
@@ -164,22 +164,22 @@ export default function EnhancedTestimonialsSection() {
                     </div>
 
                     {/* Background decor */}
-                    <div className="absolute -top-6 -right-6 w-16 h-16 bg-white dark:bg-neutral-800 rounded-full opacity-20 blur-lg"></div>
-                    <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-blue-500 dark:bg-blue-700 rounded-full opacity-20 blur-lg"></div>
+                    <div className="absolute -top-6 -right-6 w-16 h-16 bg-white rounded-full opacity-20 blur-lg"></div>
+                    <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-blue-500 rounded-full opacity-20 blur-lg"></div>
                   </div>
                 </div>
               </div>
 
               {/* Testimonial content - 4 columns */}
-              <div className="lg:col-span-4 bg-white dark:bg-neutral-800 p-8 md:p-12 flex flex-col justify-center">
+              <div className="lg:col-span-4 bg-white p-8 md:p-12 flex flex-col justify-center">
                 {/* Quote icon */}
                 <Quote
-                  className="text-neutral-300 dark:text-neutral-700 mb-6"
+                  className="text-neutral-300 mb-6"
                   size={48}
                 />
 
                 {/* Testimonial text */}
-                <blockquote className="text-xl text-neutral-800 dark:text-neutral-200 mb-8 leading-relaxed">
+                <blockquote className="text-xl text-neutral-800 mb-8 leading-relaxed">
                   "{testimonials[currentIndex].content}"
                 </blockquote>
 
@@ -189,7 +189,7 @@ export default function EnhancedTestimonialsSection() {
                     {testimonials[currentIndex].author}
                   </h3>
 
-                  <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+                  <p className="text-neutral-600 mb-4">
                     {testimonials[currentIndex].position} | {testimonials[currentIndex].location}
                   </p>
 
@@ -202,7 +202,7 @@ export default function EnhancedTestimonialsSection() {
                         className={`
                           ${i < testimonials[currentIndex].rating
                             ? 'text-amber-400 fill-amber-400'
-                            : 'text-neutral-300 dark:text-neutral-700'
+                            : 'text-neutral-300'
                           }
                         `}
                       />
@@ -226,8 +226,8 @@ export default function EnhancedTestimonialsSection() {
                   className={`
                     transition-all duration-300 rounded-full
                     ${currentIndex === index
-                      ? 'w-8 h-2 bg-blue-600 dark:bg-blue-500'
-                      : 'w-2 h-2 bg-neutral-300 dark:bg-neutral-700 hover:bg-blue-400 dark:hover:bg-blue-700'
+                      ? 'w-8 h-2 bg-blue-600'
+                      : 'w-2 h-2 bg-neutral-300 hover:bg-blue-400'
                     }
                   `}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -242,10 +242,10 @@ export default function EnhancedTestimonialsSection() {
                 disabled={isAnimating}
                 className="
                   p-3 rounded-full 
-                  bg-white dark:bg-neutral-800 
-                  hover:bg-blue-50 dark:hover:bg-neutral-700
-                  text-neutral-700 dark:text-neutral-300
-                  hover:text-blue-600 dark:hover:text-blue-400
+                  bg-white
+                  hover:bg-blue-50
+                  text-neutral-700
+                  hover:text-blue-600
                   shadow-md hover:shadow-lg
                   transition-all
                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50
@@ -260,10 +260,10 @@ export default function EnhancedTestimonialsSection() {
                 disabled={isAnimating}
                 className="
                   p-3 rounded-full 
-                  bg-white dark:bg-neutral-800 
-                  hover:bg-blue-50 dark:hover:bg-neutral-700
-                  text-neutral-700 dark:text-neutral-300
-                  hover:text-blue-600 dark:hover:text-blue-400
+                  bg-white
+                  hover:bg-blue-50
+                  text-neutral-700
+                  hover:text-blue-600
                   shadow-md hover:shadow-lg
                   transition-all
                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50
@@ -277,5 +277,5 @@ export default function EnhancedTestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

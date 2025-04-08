@@ -74,8 +74,8 @@ export default function ContactSection() {
       id="contact" 
       className="
         py-24 
-        bg-white dark:bg-neutral-950
-        text-neutral-900 dark:text-neutral-100 
+        bg-white
+        text-neutral-900
         relative 
         overflow-hidden
         section-animate
@@ -100,7 +100,7 @@ export default function ContactSection() {
           </h2>
           <p className="
             text-lg 
-            text-neutral-600 dark:text-neutral-400
+            text-neutral-600
             max-w-2xl 
             mx-auto
           ">
@@ -112,12 +112,12 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="
-              bg-white dark:bg-neutral-900/30
+              bg-white
               rounded-xl
               p-8 
               shadow-lg
-              shadow-neutral-200/50 dark:shadow-neutral-900/50
-              border border-neutral-200 dark:border-neutral-800
+              shadow-neutral-200/50
+              border border-neutral-200
             ">
               {isSubmitted ? (
                 <div className="
@@ -130,7 +130,7 @@ export default function ContactSection() {
                   animate-fade-in
                 ">
                   <div className="
-                    bg-primary/10 dark:bg-primary/20 backdrop-blur-md
+                    bg-primary/10
                     p-4 
                     rounded-full 
                     mb-6
@@ -148,7 +148,7 @@ export default function ContactSection() {
                     Thank You!
                   </h3>
                   <p className="
-                    text-neutral-600 dark:text-neutral-400
+                    text-neutral-600
                     max-w-md
                   ">
                     Your message has been sent successfully. Our team will review your request and get back to you shortly.
@@ -162,7 +162,7 @@ export default function ContactSection() {
                         htmlFor="name" 
                         className="
                           block 
-                          text-neutral-700 dark:text-neutral-300
+                          text-neutral-700
                           font-medium
                         "
                       >
@@ -178,10 +178,10 @@ export default function ContactSection() {
                         className="
                           w-full 
                           px-4 py-3 
-                          bg-neutral-50 dark:bg-neutral-800/20 backdrop-blur-md
-                          border border-neutral-200 dark:border-neutral-700
+                          bg-neutral-50
+                          border border-neutral-200
                           rounded-lg 
-                          text-neutral-900 dark:text-neutral-100
+                          text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
                           focus:ring-primary/40
@@ -197,7 +197,7 @@ export default function ContactSection() {
                         htmlFor="email" 
                         className="
                           block 
-                          text-neutral-700 dark:text-neutral-300 
+                          text-neutral-700
                           font-medium
                         "
                       >
@@ -213,10 +213,10 @@ export default function ContactSection() {
                         className="
                           w-full 
                           px-4 py-3 
-                          bg-neutral-50 dark:bg-neutral-800/20 backdrop-blur-md
-                          border border-neutral-200 dark:border-neutral-700
+                          bg-neutral-50
+                          border border-neutral-200
                           rounded-lg 
-                          text-neutral-900 dark:text-neutral-100
+                          text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
                           focus:ring-primary/40
@@ -234,7 +234,7 @@ export default function ContactSection() {
                         htmlFor="phone" 
                         className="
                           block 
-                          text-neutral-700 dark:text-neutral-300
+                          text-neutral-700
                           font-medium
                         "
                       >
@@ -250,10 +250,10 @@ export default function ContactSection() {
                         className="
                           w-full 
                           px-4 py-3 
-                          bg-neutral-50 dark:bg-neutral-800/20 backdrop-blur-md
-                          border border-neutral-200 dark:border-neutral-700
+                          bg-neutral-50
+                          border border-neutral-200
                           rounded-lg 
-                          text-neutral-900 dark:text-neutral-100
+                          text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
                           focus:ring-primary/40
@@ -269,7 +269,7 @@ export default function ContactSection() {
                         htmlFor="service" 
                         className="
                           block 
-                          text-neutral-700 dark:text-neutral-300
+                          text-neutral-700
                           font-medium
                         "
                       >
@@ -284,10 +284,10 @@ export default function ContactSection() {
                         className="
                           w-full 
                           px-4 py-3 
-                          bg-neutral-50 dark:bg-neutral-800/20 backdrop-blur-md
-                          border border-neutral-200 dark:border-neutral-700
+                          bg-neutral-50
+                          border border-neutral-200
                           rounded-lg 
-                          text-neutral-900 dark:text-neutral-100
+                          text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
                           focus:ring-primary/40
@@ -312,7 +312,7 @@ export default function ContactSection() {
                       htmlFor="message" 
                       className="
                         block 
-                        text-neutral-700 dark:text-neutral-300/30
+                        text-neutral-700
                         font-medium
                       "
                     >
@@ -327,10 +327,10 @@ export default function ContactSection() {
                       className="
                         w-full 
                         px-4 py-3 
-                        bg-neutral-50 dark:bg-neutral-800/20 backdrop-blur-md
-                        border border-neutral-200 dark:border-neutral-700
+                        bg-neutral-50
+                        border border-neutral-200
                         rounded-lg 
-                        text-neutral-900 dark:text-neutral-100
+                        text-neutral-900
                         focus:outline-none 
                         focus:ring-2 
                         focus:ring-primary/40
@@ -382,12 +382,12 @@ export default function ContactSection() {
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
             <div className="
-              bg-white dark:bg-neutral-900/20 backdrop-blur-md
+              bg-white 
               rounded-xl
               p-8 
               shadow-lg
-              shadow-neutral-200/50 dark:shadow-neutral-900/50
-              border border-neutral-200 dark:border-neutral-800
+              shadow-neutral-200/50
+              border border-neutral-200
               stagger-children
             ">
               <h3 className="
@@ -401,7 +401,7 @@ export default function ContactSection() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="
-                    bg-neutral-100 dark:bg-neutral-800
+                    bg-neutral-100
                     p-3 
                     rounded-lg
                     text-primary
@@ -410,7 +410,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="
-                      text-neutral-700 dark:text-neutral-300
+                      text-neutral-700
                       font-medium
                     ">
                       Phone
@@ -418,8 +418,8 @@ export default function ContactSection() {
                     <a 
                       href="tel:+919188126866" 
                       className="
-                        text-neutral-900 dark:text-neutral-100
-                        hover:text-primary dark:hover:text-primary
+                        text-neutral-900
+                        hover:text-primary
                         transition-colors
                       "
                     >
@@ -430,7 +430,7 @@ export default function ContactSection() {
                 
                 <div className="flex items-start space-x-4">
                   <div className="
-                    bg-neutral-100 dark:bg-neutral-800
+                    bg-neutral-100
                     p-3 
                     rounded-lg
                     text-primary
@@ -439,7 +439,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="
-                      text-neutral-700 dark:text-neutral-300
+                      text-neutral-700
                       font-medium
                     ">
                       Email
@@ -447,8 +447,8 @@ export default function ContactSection() {
                     <a 
                       href="mailto:brightwaytechnicalsolution@gmail.com" 
                       className="
-                        text-neutral-900 dark:text-neutral-100
-                        hover:text-primary dark:hover:text-primary
+                        text-neutral-900
+                        hover:text-primary
                         transition-colors
                       "
                     >
@@ -459,7 +459,7 @@ export default function ContactSection() {
                 
                 <div className="flex items-start space-x-4">
                   <div className="
-                    bg-neutral-100 dark:bg-neutral-800
+                    bg-neutral-100
                     p-3 
                     rounded-lg
                     text-primary
@@ -468,13 +468,13 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="
-                      text-neutral-700 dark:text-neutral-300
+                      text-neutral-700
                       font-medium
                     ">
                       Address
                     </p>
                     <p className="
-                      text-neutral-900 dark:text-neutral-100
+                      text-neutral-900
                     ">
                       Changaleeri, Mannarkkad<br />
                       Kerala 678762
@@ -484,7 +484,7 @@ export default function ContactSection() {
                 
                 <div className="flex items-start space-x-4">
                   <div className="
-                    bg-neutral-100 dark:bg-neutral-800
+                    bg-neutral-100
                     p-3 
                     rounded-lg
                     text-primary
@@ -493,13 +493,13 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="
-                      text-neutral-700 dark:text-neutral-300
+                      text-neutral-700
                       font-medium
                     ">
                       Working Hours
                     </p>
                     <p className="
-                      text-neutral-900 dark:text-neutral-100
+                      text-neutral-900
                     ">
                       Monday-Friday: 9AM-6PM<br />
                       Saturday: 9AM-4PM<br />
@@ -512,7 +512,7 @@ export default function ContactSection() {
             
             {/* Trust Badge */}
             <div className="
-              bg-neutral-100 dark:bg-neutral-800/20 backdrop-blur-md
+              bg-neutral-100
               rounded-xl
               p-6
               border border-white/80
@@ -526,7 +526,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-medium">Licensed & Insured</h4>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">All our technicians are certified professionals</p>
+                <p className="text-sm text-neutral-600">All our technicians are certified professionals</p>
               </div>
             </div>
           </div>

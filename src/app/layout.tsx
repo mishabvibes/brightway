@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/layout';
 import './globals.css';
 
@@ -64,10 +63,7 @@ export const metadata: Metadata = {
       }
     ]
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0F172A' }
-  ],
+  themeColor: '#1E40AF',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover',
   formatDetection: {
     telephone: true,
@@ -114,16 +110,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="BrightWay" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#1E40AF" />
-        <meta name="theme-color" content="#1E40AF" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#1E40AF" />
         
         <link rel="apple-touch-icon" href="/ios/180.png" />
         {/* Your existing meta tags and custom styles */}
       </head>
       <body className={`${inter.className} ${inter.variable}`}>
-        <ThemeProvider>
-          <Layout>{children}</Layout>
-        </ThemeProvider>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
