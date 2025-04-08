@@ -131,8 +131,8 @@ export default function InstallPrompt() {
   if (!isMobile || alreadyInstalled || !showPrompt) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6" data-pwa-install-prompt>
-      <div className="relative bg-white dark:bg-neutral-900 rounded-xl shadow-xl border border-neutral-200 dark:border-neutral-800 overflow-hidden max-w-md mx-auto animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm" data-pwa-install-prompt>
+      <div className="relative bg-white dark:bg-neutral-900 rounded-xl shadow-xl border border-neutral-200 dark:border-neutral-800 overflow-hidden max-w-md w-[92%] mx-4 animate-fade-in">
         <div className="h-2 bg-gradient-to-r from-blue-600 to-orange-500"></div>
         
         <div className="p-6">
