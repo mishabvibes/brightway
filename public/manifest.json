@@ -2,12 +2,45 @@
     "name": "BrightWay Electrical & Plumbing Solutions",
     "short_name": "BrightWay",
     "description": "Innovative electrical and plumbing solutions powered by cutting-edge technology",
-    "start_url": "/",
+    "start_url": "/?source=pwa",
+    "id": "/",
     "display": "standalone",
+    "display_override": ["window-controls-overlay", "standalone"],
     "background_color": "#FFFFFF",
     "theme_color": "#1E40AF",
     "orientation": "portrait",
     "scope": "/",
+    "categories": ["business", "utilities", "home services"],
+    "shortcuts": [
+      {
+        "name": "Contact Us",
+        "short_name": "Contact",
+        "description": "Get a free quote for your project",
+        "url": "/#contact",
+        "icons": [{ "src": "/android/android-launchericon-96-96.png", "sizes": "96x96" }]
+      },
+      {
+        "name": "Our Services",
+        "short_name": "Services",
+        "description": "Explore our electrical and plumbing services",
+        "url": "/#services",
+        "icons": [{ "src": "/android/android-launchericon-96-96.png", "sizes": "96x96" }]
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/screenshots/screenshot1.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/screenshots/screenshot2.png",
+        "sizes": "750x1334",
+        "type": "image/png",
+        "form_factor": "narrow"
+      }
+    ],
     "icons": [
       {
         "src": "windows11/SmallTile.scale-100.png",
@@ -572,36 +605,6 @@
         "sizes": "1024x1024",
         "type": "image/png"
       }
-    ],
-    "shortcuts": [
-      {
-        "name": "Contact Us",
-        "short_name": "Contact",
-        "description": "Get a free quote for your project",
-        "url": "/#contact",
-        "icons": [{ "src": "/android/android-launchericon-96-96.png", "sizes": "96x96" }]
-      },
-      {
-        "name": "Our Services",
-        "short_name": "Services",
-        "description": "Explore our electrical and plumbing services",
-        "url": "/#services",
-        "icons": [{ "src": "/android/android-launchericon-96-96.png", "sizes": "96x96" }]
-      }
-    ],
-    "screenshots": [
-      {
-        "src": "/screenshots/screenshot1.png",
-        "sizes": "1280x720",
-        "type": "image/png",
-        "form_factor": "wide"
-      },
-      {
-        "src": "/screenshots/screenshot2.png",
-        "sizes": "750x1334",
-        "type": "image/png",
-        "form_factor": "narrow"
-      }
-    ],
-    "prefer_related_applications": false
-  }
+      ],
+      "prefer_related_applications": false
+    }
