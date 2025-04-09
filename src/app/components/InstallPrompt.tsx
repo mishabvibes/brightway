@@ -144,7 +144,7 @@ export default function InstallPrompt() {
           </button>
           
           <div className="flex items-start">
-            <div className="mr-4 p-3 rounded-full bg-blue-100 dark:bg-blue-900/20 text-blue-600">
+            <div className="mr-4 p-3 rounded-full bg-blue-100 text-blue-600">
               <Smartphone size={28} />
             </div>
             
