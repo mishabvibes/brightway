@@ -3,10 +3,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { 
   Phone, Mail, MapPin, Check, Send, 
-  ArrowRight, Clock, Shield 
+  ArrowRight, Clock, Shield, ChevronRight 
 } from 'lucide-react';
 
-export default function ContactSection() {
+export default function EnhancedContactSection() {
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,15 +18,38 @@ export default function ContactSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const sectionRef = useRef(null);
+  const formRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  // Animation on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -47,77 +71,59 @@ export default function ContactSection() {
       }, 5000);
     }, 1500);
   };
-  
-  // Button hover animation
-  useEffect(() => {
-    const button = buttonRef.current;
-    if (!button) return;
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      button.style.setProperty('--mouse-x', `${x}px`);
-      button.style.setProperty('--mouse-y', `${y}px`);
-    };
-    
-    button.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      button.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   return (
     <section 
+      ref={sectionRef}
       id="contact" 
-      className="
-        py-24 
-        bg-white
-        text-neutral-900
-        relative 
-        overflow-hidden
-        section-animate
-      "
+      className="py-24 bg-neutral-50 overflow-hidden relative"
     >
-      {/* Background gradient */}
-      <div className="
-        absolute inset-0 
-        bg-gradient-subtle
-        pointer-events-none
-      "></div>
-
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 -left-20 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl"></div>
+      </div>
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="
-            text-3xl md:text-4xl 
-            font-bold 
-            mb-4
-          ">
-            Let's Build Your <span className="gradient-text">Future-Ready Solution</span>
+        <div 
+          className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${
+            isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
+          }`}
+        >
+          <div className="inline-block mb-4">
+            <span className="bg-blue-100 text-blue-600 text-sm font-medium px-4 py-2 rounded-full">
+              Contact Us
+            </span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
+              Let's Build Your Future-Ready Solution
+            </span>
           </h2>
-          <p className="
-            text-lg 
-            text-neutral-600
-            max-w-2xl 
-            mx-auto
-          ">
+          
+          <p className="text-lg text-neutral-600">
             Ready to transform your electrical and plumbing systems? Contact us for a personalized consultation tailored to your specific needs.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
-          <div className="lg:col-span-2">
+          <div 
+            className={`lg:col-span-2 transition-all duration-700 ${
+              isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-10'
+            }`}
+          >
             <div className="
               bg-white
               rounded-xl
               p-8 
               shadow-lg
-              shadow-neutral-200/50
+              hover:shadow-xl
               border border-neutral-200
+              transition-all
+              duration-300
             ">
               {isSubmitted ? (
                 <div className="
@@ -130,13 +136,13 @@ export default function ContactSection() {
                   animate-fade-in
                 ">
                   <div className="
-                    bg-primary/10
+                    bg-blue-50
                     p-4 
                     rounded-full 
                     mb-6
                   ">
                     <Check 
-                      className="text-primary" 
+                      className="text-blue-600" 
                       size={48} 
                     />
                   </div>
@@ -184,7 +190,7 @@ export default function ContactSection() {
                           text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
-                          focus:ring-primary/40
+                          focus:ring-blue-500/40
                           focus:border-transparent
                           transition-colors
                         "
@@ -219,7 +225,7 @@ export default function ContactSection() {
                           text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
-                          focus:ring-primary/40
+                          focus:ring-blue-500/40
                           focus:border-transparent
                           transition-colors
                         "
@@ -256,7 +262,7 @@ export default function ContactSection() {
                           text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
-                          focus:ring-primary/40
+                          focus:ring-blue-500/40
                           focus:border-transparent
                           transition-colors
                         "
@@ -290,7 +296,7 @@ export default function ContactSection() {
                           text-neutral-900
                           focus:outline-none 
                           focus:ring-2 
-                          focus:ring-primary/40
+                          focus:ring-blue-500/40
                           focus:border-transparent
                           transition-colors
                         "
@@ -333,7 +339,7 @@ export default function ContactSection() {
                         text-neutral-900
                         focus:outline-none 
                         focus:ring-2 
-                        focus:ring-primary/40
+                        focus:ring-blue-500/40
                         focus:border-transparent
                         transition-colors
                       "
@@ -342,30 +348,27 @@ export default function ContactSection() {
                   </div>
                   
                   <button
-                    ref={buttonRef}
                     type="submit"
                     disabled={isSubmitting}
                     className="
+                      group
                       w-full 
-                      py-3 
-                      bg-gradient-to-r from-primary to-primary/90
+                      py-4 
+                      bg-gradient-to-r from-blue-600 to-indigo-600
                       text-white 
                       font-medium 
                       rounded-lg 
-                      shadow-lg shadow-primary/20
-                      hover:shadow-xl hover:shadow-primary/30
+                      shadow-lg
+                      hover:shadow-xl
                       transition-all 
                       flex 
                       items-center 
                       justify-center 
-                      group
-                      focus:outline-none
-                      focus:ring-2
-                      focus:ring-primary/40
+                      hover:bg-gradient-to-br
                     "
                   >
                     {isSubmitting ? 'Sending...' : 'Get Your Free Quote'}
-                    <Send 
+                    <ChevronRight 
                       className="
                         ml-2 
                         group-hover:translate-x-1 
@@ -380,46 +383,52 @@ export default function ContactSection() {
           </div>
           
           {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-6">
+          <div 
+            className={`lg:col-span-1 space-y-6 transition-all duration-700 ${
+              isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-10'
+            }`}
+          >
             <div className="
               bg-white 
               rounded-xl
               p-8 
               shadow-lg
-              shadow-neutral-200/50
+              hover:shadow-xl
               border border-neutral-200
-              stagger-children
+              transition-all
+              duration-300
+              space-y-6
             ">
               <h3 className="
                 text-xl 
-                font-bold 
+                font-semibold 
                 mb-6
+                border-b border-neutral-200 
+                pb-4
               ">
                 Contact Details
               </h3>
               
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center gap-4 group hover:bg-blue-50 p-3 -mx-3 rounded-lg transition-colors">
                   <div className="
-                    bg-neutral-100
-                    p-3 
+                    w-12 h-12
+                    bg-blue-50
                     rounded-lg
-                    text-primary
+                    flex items-center 
+                    justify-center
+                    text-blue-600
                   ">
-                    <Phone size={20} />
+                    <Phone size={24} />
                   </div>
                   <div>
-                    <p className="
-                      text-neutral-700
-                      font-medium
-                    ">
-                      Phone
-                    </p>
+                    <p className="text-neutral-600 text-sm mb-1">Phone</p>
                     <a 
                       href="tel:+919188126866" 
                       className="
                         text-neutral-900
-                        hover:text-primary
+                        font-medium
+                        group-hover:text-blue-600
                         transition-colors
                       "
                     >
@@ -428,27 +437,25 @@ export default function ContactSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center gap-4 group hover:bg-blue-50 p-3 -mx-3 rounded-lg transition-colors">
                   <div className="
-                    bg-neutral-100
-                    p-3 
+                    w-12 h-12
+                    bg-blue-50
                     rounded-lg
-                    text-primary
+                    flex items-center 
+                    justify-center
+                    text-blue-600
                   ">
-                    <Mail size={20} />
+                    <Mail size={24} />
                   </div>
                   <div>
-                    <p className="
-                      text-neutral-700
-                      font-medium
-                    ">
-                      Email
-                    </p>
+                    <p className="text-neutral-600 text-sm mb-1">Email</p>
                     <a 
                       href="mailto:brightwaytechnicalsolution@gmail.com" 
                       className="
                         text-neutral-900
-                        hover:text-primary
+                        font-medium
+                        group-hover:text-blue-600
                         transition-colors
                       "
                     >
@@ -457,24 +464,24 @@ export default function ContactSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center gap-4 group hover:bg-blue-50 p-3 -mx-3 rounded-lg transition-colors">
                   <div className="
-                    bg-neutral-100
-                    p-3 
+                    w-12 h-12
+                    bg-blue-50
                     rounded-lg
-                    text-primary
+                    flex items-center 
+                    justify-center
+                    text-blue-600
                   ">
-                    <MapPin size={20} />
+                    <MapPin size={24} />
                   </div>
                   <div>
-                    <p className="
-                      text-neutral-700
-                      font-medium
-                    ">
-                      Address
-                    </p>
+                    <p className="text-neutral-600 text-sm mb-1">Address</p>
                     <p className="
                       text-neutral-900
+                      font-medium
+                      group-hover:text-blue-600
+                      transition-colors
                     ">
                       Changaleeri, Mannarkkad<br />
                       Kerala 678762
@@ -482,28 +489,28 @@ export default function ContactSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center gap-4 group hover:bg-blue-50 p-3 -mx-3 rounded-lg transition-colors">
                   <div className="
-                    bg-neutral-100
-                    p-3 
+                    w-12 h-12
+                    bg-blue-50
                     rounded-lg
-                    text-primary
+                    flex items-center 
+                    justify-center
+                    text-blue-600
                   ">
-                    <Clock size={20} />
+                    <Clock size={24} />
                   </div>
                   <div>
-                    <p className="
-                      text-neutral-700
-                      font-medium
-                    ">
-                      Working Hours
-                    </p>
+                    <p className="text-neutral-600 text-sm mb-1">Working Hours</p>
                     <p className="
                       text-neutral-900
+                      font-medium
+                      group-hover:text-blue-600
+                      transition-colors
                     ">
                       Monday-Friday: 9AM-6PM<br />
                       Saturday: 9AM-4PM<br />
-                      <span className="text-primary font-medium">24/7 Emergency Service</span>
+                      <span className="text-blue-600 font-semibold">24/7 Emergency Service</span>
                     </p>
                   </div>
                 </div>
@@ -512,20 +519,29 @@ export default function ContactSection() {
             
             {/* Trust Badge */}
             <div className="
-              bg-neutral-100
+              bg-white
               rounded-xl
               p-6
-              border border-white/80
+              shadow-lg
+              hover:shadow-xl
+              border border-neutral-200
               flex items-center
               space-x-4
+              transition-all
+              duration-300
             ">
               <div className="
-                text-primary
+                w-14 h-14
+                bg-blue-50
+                rounded-lg
+                flex items-center 
+                justify-center
+                text-blue-600
               ">
-                <Shield size={32} />
+                <Shield size={28} />
               </div>
               <div>
-                <h4 className="font-medium">Licensed & Insured</h4>
+                <h4 className="font-semibold text-neutral-900">Licensed & Insured</h4>
                 <p className="text-sm text-neutral-600">All our technicians are certified professionals</p>
               </div>
             </div>

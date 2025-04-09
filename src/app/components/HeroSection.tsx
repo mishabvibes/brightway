@@ -86,7 +86,7 @@ export default function EnhancedHomePage() {
                   <span className="relative flex items-center">Get Free Quote <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" /></span>
                 </a>
                 
-                <a href="#services" className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-white/10 backdrop-blur-sm border border-neutral-200 hover:bg-white text-neutral-800 font-medium transition-colors">
+                <a href="#services-section" className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-white/10 backdrop-blur-sm border border-neutral-200 hover:bg-white text-neutral-800 font-medium transition-colors">
                   Our Services <ArrowRight className="ml-2 transition-transform" />
                 </a>
               </div>
@@ -95,7 +95,7 @@ export default function EnhancedHomePage() {
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative">
                 {/* Main image container */}
-                <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 overflow-hidden shadow-xl">
+                <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl  overflow-hidden shadow-xl">
                   {/* Image overlay */}
                   <div className="absolute inset-0 bg-[url('/hero.png')] bg-center bg-cover mix-blend-overlay opacity-80"></div>
                   

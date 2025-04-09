@@ -51,27 +51,27 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   // Navigation items
   const navItems = [
-    { 
-      name: 'Home', 
-      href: '/', 
+    {
+      name: 'Home',
+      href: '/',
       icon: <Home className="bottom-nav-icon" size={20} />,
       section: 'home'
     },
-    { 
-      name: 'Services', 
-      href: '/#services', 
+    {
+      name: 'Services',
+      href: '/#services-section',
       icon: <Wrench className="bottom-nav-icon" size={20} />,
       section: 'services'
     },
-    { 
-      name: 'About', 
-      href: '/#about', 
+    {
+      name: 'About',
+      href: '/#about',
       icon: <Info className="bottom-nav-icon" size={20} />,
       section: 'about'
     },
-    { 
-      name: 'Contact', 
-      href: '/#contact', 
+    {
+      name: 'Contact',
+      href: '/#contact',
       icon: <Phone className="bottom-nav-icon" size={20} />,
       section: 'contact'
     }
@@ -80,7 +80,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
       {/* Desktop Navigation */}
-      <header 
+      <header
         className={`
           fixed 
           top-0 
@@ -89,8 +89,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           z-50 
           transition-all 
           duration-300 
-          ${scrolled 
-            ? 'bg-white/90 backdrop-blur-md shadow-md' 
+          ${scrolled
+            ? 'bg-white/90 backdrop-blur-md shadow-md'
             : 'bg-transparent'
           }
           md:block
@@ -99,33 +99,26 @@ export default function Layout({ children }: { children: ReactNode }) {
       >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="
-              text-xl
-              font-bold 
-              text-neutral-900 
-              hover:text-primary
-              transition-colors
-              flex items-center
-            "
-          >
-            <div className="
-              w-8 h-8 
-              mr-2
-              rounded-full 
-              bg-gradient-to-br 
-              from-primary to-secondary
-              flex items-center 
-              justify-center
-              text-white
-              shadow-md
-            ">
-              BW
+                      text-xl
+                      font-bold 
+                      text-neutral-900 
+                      hover:text-primary
+                      transition-colors
+                      flex items-center
+                      gap-2
+                    ">
+            <div className="w-10 h-10 rounded-full overflow-hidden">
+              <img
+                src="/logo.jpg"
+                alt="BrightWay Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             BrightWay
           </Link>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
@@ -149,11 +142,11 @@ export default function Layout({ children }: { children: ReactNode }) {
                 {item.name}
               </Link>
             ))}
-            
+
             {/* CTA Button */}
             <div className="flex items-center">
-              <Link 
-                href="/#contact" 
+              <Link
+                href="/#contact"
                 className="
                   px-5
                   py-2 
@@ -202,7 +195,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div 
+        <div
           className="
             fixed 
             inset-0 
@@ -246,9 +239,9 @@ export default function Layout({ children }: { children: ReactNode }) {
                 {item.name}
               </Link>
             ))}
-            
-            <Link 
-              href="/#contact" 
+
+            <Link
+              href="/#contact"
               onClick={() => setIsMenuOpen(false)}
               className="
                 mt-6
